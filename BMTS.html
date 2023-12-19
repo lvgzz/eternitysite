@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Moon Script</title>
+    <link rel="stylesheet" href="styles.css">
+	<script src="clarity.js" type="text/javascript"></script>
+<style>
+    /* Your existing styles here */
+
+    :root {
+        --color1: #F4F5F2;
+        --color2: #AA96CC;
+        --color3: #A2ACC8;
+        --color4: #8289B6;
+        --color5: #6449D6;
+    }
+
+    /* Rest of your CSS */
+
+    /* Styling for the formatted text box */
+    .formatted-box {
+        background-color: var(--color1);
+        padding: 20px;
+        border: 1px solid var(--color4);
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #scriptLink {
+        background-color: #FFD700; /* Change the background color */
+        color: #333; /* Change the text color */
+        padding: 8px 16px; /* Slightly smaller padding for smaller button */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transition */
+    }
+
+    #scriptLink:hover {
+        background-color: #FFC800; /* Change the background color on hover */
+    }
+
+    /* Styling for clickable elements */
+    .clickable {
+        cursor: pointer;
+        transition: transform 0.2s ease; /* Add a subtle transform on hover */
+    }
+
+    .clickable:hover {
+        transform: scale(1.05); /* Increase the size on hover */
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px; /* Add some spacing around the container for small screens */
+        }
+
+        .specs-box {
+            padding: 10px; /* Adjust padding for small screens */
+        }
+
+        /* Adjust font sizes for better readability on small screens */
+        .container h1 {
+            font-size: 24px; /* Decrease font size for the title */
+            margin-top: 5px; /* Move the title a bit closer to the top */
+        }
+
+        .return-button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px; /* Move the button container closer to specs-box */
+        }
+
+        .return-button {
+            font-size: 14px; /* Decrease font size for the buttons */
+            width: 48%; /* Set width for the buttons */
+        }
+
+        .specs-box h2 {
+            font-size: 18px; /* Decrease font size for the subtitles */
+        }
+
+        .specs-box p {
+            font-size: 14px; /* Decrease font size for the content */
+            margin-bottom: 10px; /* Adjust this value as needed */
+        }
+
+        /* Adjust image size for mobile screens */
+        .specs-box img {
+            width: 100%; /* Make the image take up the full width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    }
+
+    /* Adjust the specs-box margin and font-size for the specified resolutions */
+    @media (max-width: 1239px) {
+        .specs-box {
+            margin-top: 10px;
+            font-size: 10px;
+        }
+    }
+
+    /* Similar adjustments for the second resolution */
+    @media (max-width: 1341px) {
+        .container {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .specs-box {
+            margin-bottom : -30px;
+            margin-top: -30px;
+            font-size: 10px;
+        }
+    }
+
+    /* Add visual cue for clickable h2 and image */
+    .specs-box h2.clickable,
+    .specs-box img.clickable {
+        position: relative; /* Position relative for absolute positioning of the line */
+    }
+
+    .specs-box h2.clickable::before,
+    .specs-box img.clickable::before {
+        content: "";
+        position: absolute;
+        bottom: -5px; /* Adjust the vertical position of the line */
+        left: 0;
+        width: 100%;
+        height: 2px; /* Line height */
+        background-color: var(--color5); /* Purple line color */
+    }
+
+    /* Hide the line on desktop screens */
+    @media (min-width: 769px) {
+        .specs-box h2.clickable::before,
+        .specs-box img.clickable::before {
+            display: none;
+        }
+    }
+
+    .clickable {
+        cursor: pointer;
+        transition: transform 0.2s ease; /* Add a subtle transform on click */
+    }
+
+    .clickable:active {
+        transform: scale(0.95); /* Decrease the size on click */
+    }
+
+/* Your existing styles */
+
+/* Media query for the specified resolutions */
+@media (max-width: 1239px) and (max-height: 602px),
+       (max-width: 1341px) and (max-height: 588px) {
+    .return-button-container {
+        margin-top: 35px; /* Adjust margin as needed */
+        z-index: 7;
+        display: flex; /* Use flexbox to display buttons side by side */
+        justify-content: center; /* Center buttons horizontally */
+    }
+
+    .return-button {
+        font-size: 14px; /* Decrease font size for the buttons */
+        display: inline-block; /* Display buttons as inline-block elements */
+        width: auto; /* Let the buttons occupy their natural width */
+        margin: 0 5px; /* Add a small margin between buttons */
+        z-index: 7;
+    }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 onclick="vibrateTitle()">Blood Moon Tycoon Script</h1>
+    <div class="socials">
+        <div class="specs-box">
+            <!-- Paste the provided text here -->
+            <!-- You can use Markdown formatting if you want to keep it simple -->
+            <h2 class="clickable"><a href="https://github.com/ExamV1/OP-Blood-Moon-Tycoon-Script-GUI" class="highlight-link"><u>Blood Moon Tycoon Script</u></a></h2>
+            <p>This is a script for the Roblox game Blood Moon Tycoon By @LostGamez, containing very OP options and troll options.</p>
+            <br><br>
+            <div class="clickable">
+                <a href="https://www.roblox.com/games/961409234/Blood-Moon-Tycoon-Spring-Update" target="_blank">
+                    <img src="https://user-images.githubusercontent.com/87576045/260014486-8647301f-2227-47b3-ae92-6f715f259666.png" alt="Game Screenshot" style="max-width: 60%; height: auto;">
+                </a>
+            </div>
+			<br></br>
+            <p>
+                <span id="scriptLink" class="clickable">
+                    Click to Copy Script Link
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="return-button-container">
+        <button class="return-button" onclick="location.href='index.html';">Return Home</button>
+        <button class="return-button" onclick="location.href='RobloxScripts.html';">Go Back</button>
+    </div>
+</div>
+<script>
+    const scriptLinkElement = document.getElementById("scriptLink");
+
+    scriptLinkElement.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default behavior of the click event
+        const scriptLink = "loadstring(game:HttpGet(('https://raw.githubusercontent.com/ExamV1/OP-Blood-Moon-Tycoon-Script-GUI/main/Blood%20Moon%20Tycoon%20GUI%20Script'),true))()"; // Replace with your actual script link
+        copyToClipboard(scriptLink);
+        scriptLinkElement.innerText = "Script Link Copied!";
+        setTimeout(() => {
+            scriptLinkElement.innerText = "Click to Copy Script Link";
+        }, 1500);
+    });
+
+    function copyToClipboard(text) {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+    }
+</script>
+</body>
+</html>

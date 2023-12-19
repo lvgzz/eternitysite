@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sendit Spammer</title>
+    <link rel="stylesheet" href="styles.css">
+	<script src="clarity.js" type="text/javascript"></script>
+    <style>
+        /* Your existing styles here */
+
+        :root {
+            --color1: #F4F5F2;
+            --color2: #AA96CC;
+            --color3: #A2ACC8;
+            --color4: #8289B6;
+            --color5: #6449D6;
+        }
+
+    /* Media query for the specified resolutions */
+    @media (max-width: 1239px) and (max-height: 602px),
+           (max-width: 1341px) and (max-height: 588px) {
+        .return-button-container {
+            margin-top: -10px; /* Adjust margin to push buttons closer to the replit box */
+            z-index: 7;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container h1 {
+            margin-top: 5px; /* Adjust margin to push h1 closer to the replit box */
+            margin-bottom: -20px; /* Adjust margin to push h1 closer to the replit box */
+        }
+
+        /* Adjust the tooltip position */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            max-width: 100%;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1c2333; /* Match the background color of the container */
+            color: #fff; /* Text color */
+            text-align: left; /* Align the text to the left */
+            border-radius: 5px;
+            padding: 1px; /* Increase padding for more space */
+            position: inherit;
+            z-index: 1;
+            top: 100%; /* Position the tooltip below the parent */
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1 onclick="vibrateTitle()">Sendit Spammer</h1>
+    <div class="socials">
+        <div class="tooltip">
+            <iframe
+                height="400px"
+                width="100%"
+                frameborder="1"
+                src="https://replit.com/@ExamV1/Sendit-Spammer?embed=true"
+            ></iframe>
+            <span class="tooltiptext">This code is designed to automate sending a stream of random trivia questions to a user on the "sendit" app.</span>
+        </div>
+    </div>
+    <div class="return-button-container">
+        <button class="return-button" onclick="location.href='index.html';">Return Home</button>
+        <button class="return-button" onclick="location.href='projects.html';">Go Back</button>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

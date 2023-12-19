@@ -1,0 +1,482 @@
+/* Reset some default margin and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#myCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Ensure the canvas doesn't interfere with other elements */
+    z-index: 0; /* Make sure it's above other elements */
+}
+
+
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    background-image: url('cool-background.jpg'); /* Replace with your cool background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 36px;
+    color: var(--color3);
+    text-align: center;
+    margin-bottom: 20px;
+    transition: color 0.3s, text-shadow 0.3s; /* Add transitions */
+	cursor: default;
+}
+
+h1:hover {
+    color: var(--color4); /* Change color on hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+		.vibrate {
+            animation: vibrate 0.3s ease infinite;
+        }
+
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(2px); }
+        }
+
+
+
+.socials {
+    margin-top: 20px;
+    position: relative;
+    z-index: 2; /* Ensure social icons are above trail */
+}
+
+.contact {
+    margin-top: 20px; /* Adjust margin for better alignment */
+}
+
+.contact p {
+    font-size: 18px;
+    color: var(--color3);
+    position: relative;
+    z-index: 3; /* Adjust z-index value */
+}
+
+.trail {
+    position: absolute;
+    width: 6px;
+    height: 66px;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--color5), var(--color4), var(--color3), var(--color2), var(--color1));
+    pointer-events: none;
+    animation: fadeOut 1s forwards, shrink 0.5s forwards, drift 2s infinite linear, changeColor 5s infinite;
+    transform-origin: center;
+    z-index: -1; /* Set a lower z-index value for the trail */
+}
+
+/* Neon button styles */
+.neon-button {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 10px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    background: linear-gradient(to right, var(--color5), var(--color4), var(--color3), var(--color2), var(--color1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 2; /* Ensure text is above trail */
+}
+
+/* Neon button animation on hover */
+.neon-button:hover {
+    color: transparent;
+    animation: rainbow-glow 1.5s infinite, changeColor 5s infinite;
+    box-shadow: 0 0 5px var(--color5),
+                0 0 25px var(--color4),
+                0 0 50px var(--color3),
+                0 0 75px var(--color2),
+                0 0 100px var(--color1);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+@keyframes rainbow-glow {
+    0% {
+        box-shadow: 0 0 5px var(--color5),
+                    0 0 25px var(--color4),
+                    0 0 50px var(--color3),
+                    0 0 75px var(--color2),
+                    0 0 100px var(--color1);
+    }
+    25% {
+        box-shadow: 0 0 5px var(--color1),
+                    0 0 25px var(--color2),
+                    0 0 50px var(--color3),
+                    0 0 75px var(--color4),
+                    0 0 100px var(--color5);
+    }
+    50% {
+        box-shadow: 0 0 5px var(--color5),
+                    0 0 25px var(--color4),
+                    0 0 50px var(--color3),
+                    0 0 75px var(--color2),
+                    0 0 100px var(--color1);
+    }
+    75% {
+        box-shadow: 0 0 5px var(--color1),
+                    0 0 25px var(--color2),
+                    0 0 50px var(--color3),
+                    0 0 75px var(--color4),
+                    0 0 100px var(--color5);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--color5),
+                    0 0 25px var(--color4),
+                    0 0 50px var(--color3),
+                    0 0 75px var(--color2),
+                    0 0 100px var(--color1);
+    }
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color: transparent;
+    }
+    50% {
+        color: var(--color2); /* Change to your desired text color */
+    }
+}
+
+/* Neon button animation span styles */
+.neon-button span {
+    position: absolute;
+    display: block;
+}
+
+.neon-button span:nth-child(2),
+.neon-button span:nth-child(2),
+.neon-button span:nth-child(3),
+.neon-button span:nth-child(4) {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--color5), var(--color4), var(--color3), var(--color2), var(--color1));
+    animation: animateGradient 2s linear infinite;
+    background-size: 20% 100%;
+}
+.neon-button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    animation-delay: 0.25s;
+}
+.neon-button span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    animation-delay: 0.50s;
+}
+.neon-button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    animation-delay: 0.75s;
+}
+
+/* Neon button animation keyframes */
+@keyframes animateGradient {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Styling for the specs box */
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.specs-box {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    animation: rainbow-border 5s infinite linear, rainbow-glow 5s infinite linear; /* Add rainbow-glow animation */
+    z-index: 1;
+}
+
+
+@keyframes rainbow-border {
+    0% {
+        box-shadow: 0 0 0 0 rgba(148, 0, 211, 0.5);
+    }
+    25% {
+        box-shadow: 0 0 20px 10px rgba(148, 0, 211, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 20px rgba(0, 0, 255, 0.5);
+    }
+    75% {
+        box-shadow: 0 0 60px 30px rgba(0, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 80px 40px rgba(255, 0, 0, 0.5);
+    }
+}
+
+
+.specs-box h2 {
+    margin-top: 10px;
+}
+
+.specs-box a {
+    color: #fff; /* Text color for clickable specs */
+    text-decoration: none;
+    outline: none;
+    transition: outline 0.3s ease-in-out;
+}
+
+.specs-box a:hover {
+    outline: 1px solid #fff; /* Outline color on hover */
+}
+
+.return-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Cursor trail effect */
+.trail {
+    position: absolute;
+    background-color: rgba(148, 0, 211, 0.3);
+    width: 10px;
+    height: 55px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s forwards, shrink 0.5s forwards, drift 2s infinite linear, changeColor 5s infinite;
+    z-index: 0;
+}
+
+@keyframes cursor-trail {
+    0% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/* Styling for the contact form */
+#contactForm {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 30px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative; /* Add relative positioning */
+    border: 2px solid var(--color3); /* Add a light border */
+}
+
+#contactForm::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid var(--color3);
+    border-radius: 34px; /* Adjust the border-radius to match the form's border-radius */
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
+    animation: pulse 3s infinite;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color3);
+}
+
+#contactForm input[type="text"],
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+#contactForm textarea {
+    resize: vertical;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contactForm button:hover {
+    background-color: #555;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.15;
+    }
+}
+
+
+.return-link {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: 3;
+}
+
+.return-link:hover {
+    color: #ccc;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.return-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.return-button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.return-button:hover {
+    background-color: #555;
+}
+
+/* Media query for screens up to 768px wide (typical mobile screens) */
+@media (max-width: 768px) {
+    .socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .neon-button {
+        width: 80%; /* Adjust the width as needed */
+        margin: 5px auto; /* Center and add spacing */
+        font-size: 14px; /* Adjust the font size as needed */
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+/* Media query for screens larger than 768px */
+@media (min-width: 769px) {
+    .socials {
+        display: flex;
+        justify-content: space-between; /* Add space between buttons */
+        align-items: center;
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 10px; /* Adjust the spacing between buttons */
+    }
+
+    .neon-button {
+        font-size: 14px; /* Adjust the font size as needed */
+        width: calc(20% - 20px); /* Distribute in five columns with gaps and margins */
+        margin: 5px; /* Add margin to both sides */
+        max-width: none; /* Remove max-width constraint */
+    }
+}
+
+
